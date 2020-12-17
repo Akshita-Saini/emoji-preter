@@ -42,22 +42,52 @@ export default function App() {
   }
   return (
     <div className="App">
+      <div className="darkLine"></div>
       <h1>EMOJI-PRETER</h1>
-      <input onChange={inputHandler} />
-      <div>{getMeaning()}</div>
-      <ul style={{ listStyleType: "none" }}>
-        {Object.keys(emojiList).map((item) => {
-          return (
-            <li
-              onClick={() => clickHandler(item)}
-              key={item}
-              style={{ display: "inline" }}
-            >
-              {item}
-            </li>
-          );
-        })}
-      </ul>
+      <div className="darkLine"></div>
+      <input onChange={inputHandler} style={{ marginTop: "2rem" }} />
+      <div id="outputDiv">{getMeaning()}</div>
+      <div id="emojiContainer">
+        <ul id="emojiList" style={{ listStyleType: "none" }}>
+          {Object.keys(emojiList).map((item) => {
+            return (
+              <li
+                onClick={() => clickHandler(item)}
+                key={item}
+                style={{ display: "inline" }}
+              >
+                {item}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <footer>
+        <p>I'd Love To Connect</p>
+        <ul id="footerList">
+          <li>
+            <a href="https://github.com/Akshita-Saini">GitHub</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/akshita-saini-0782a61a1/">
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/akshitasaini15?lang=en">Twitter</a>
+          </li>
+        </ul>
+        <div>
+          <p>
+            Created by Akshita &copy;
+            <br></br>
+            Visit Portfolio at{" "}
+            <a href="https://akshita-saini.netlify.app/">
+              akshita-saini.netlify.app
+            </a>
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
